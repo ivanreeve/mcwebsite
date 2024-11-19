@@ -1,3 +1,23 @@
+FONTS
+-- Inter, Nunito
+-- Mojangles
+
+COLOR SCHEME
+-- Green
+-- Black
+
+WEBSITE CONTENT GIST
+-- servers
+-- creations
+-- mods
+
 NAVIGATION BAR
--- 
--- 
+-- Home
+   -- Events (3)
+-- About
+-- Servers (5)
+-- Creations (7)
+-- Mods (5)
+-- Contacts
+
+TASK DISTRIBUTION
