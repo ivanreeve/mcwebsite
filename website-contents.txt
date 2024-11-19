@@ -21,3 +21,17 @@ NAVIGATION BAR
 -- Contacts
 
 TASK DISTRIBUTION
+
+IVAN
+-- Navigation bar
+-- Home
+-- About
+-- Footer
+-- Mods
+
+KURT
+-- Servers
+-- Creations
+-- Contacts
+
+Deadline: Before November 30
