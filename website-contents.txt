@@ -16,7 +16,6 @@ NAVIGATION BAR
    -- Events (3)
 -- About
 -- Servers (5)
--- Creations (7)
 -- Mods (5)
 -- Contacts
 
@@ -31,7 +30,6 @@ IVAN
 
 KURT
 -- Servers
--- Creations
 -- Contacts
 
 Deadline: Before November 30

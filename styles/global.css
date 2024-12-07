@@ -1,11 +1,308 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
 @font-face {
-  font-family: 'MojangFont';
-  src: url('../assets/fonts/Minecraft.ttf');
+    font-family: 'MojangFont';
+    src: url('../assets/fonts/Minecraft.ttf');
+}
+
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #2196F3;
+    --minecraft-brown: #8B4513;
+    --minecraft-green: #228B22;
+    --form-background: #F5DEB3;
+    --form-border: #D2691E;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 .wrapper h1 {
-  font-family: MojangFont;
-  color: Red;
+    font-family: 'MojangFont', sans-serif;
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Navigation Styles (Previous CSS) */
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    background-color: var(--primary-color);
+    padding: 10px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav ul li a.active {
+    color: var(--active-nav-color);
+    transform: scale(1.1);
+}
+
+/* Servers Carousel Styles */
+.servers-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.carousel-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.server-card {
+    display: flex;
+    background-color: #FFF;
+    border: 4px solid var(--minecraft-brown);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.server-card-image {
+    flex: 1;
+}
+
+.server-card-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.server-card-content {
+    flex: 2;
+    padding: 20px;
+}
+
+.server-card-content h3 {
+    color: var(--minecraft-green);
+    margin-bottom: 10px;
+}
+
+.server-details {
+    margin-top: 15px;
+}
+
+.server-detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.server-detail-item span {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.server-ip {
+    display: flex;
+    margin-top: 15px;
+}
+
+.server-ip input {
+    flex-grow: 1;
+    padding: 8px;
+    border: 2px solid var(--minecraft-brown);
+    background-color: #F5DEB3;
+}
+
+.server-ip .copy-ip {
+    padding: 8px 15px;
+    background-color: var(--minecraft-green);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.carousel-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Contacts Page Styles */
+.team-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.team-members {
+    display: flex;
+    gap: 30px;
+}
+
+.team-member {
+    text-align: center;
+}
+
+.member-avatar {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 15px;
+}
+
+.member-avatar img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+}
+
+.avatar-border {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border: 10px solid var(--minecraft-brown);
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.member-info h3 {
+    color: var(--minecraft-green);
+}
+
+.member-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-icon {
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
+}
+
+/* Minecraft-style Form */
+.minecraft-form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: var(--form-background);
+    border: 4px solid var(--form-border);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--minecraft-green);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--minecraft-brown);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid var(--minecraft-brown);
+    background-color: #F5DEB3;
+}
+
+.form-group textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--minecraft-green);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: #186318;
+}
+
+.carousel-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+}
+
+.server-card {
+    flex: 0 0 100%;
+    display: none;
+}
+
+.server-card.active {
+    display: flex;
+}
+
+.carousel-prev,
+.carousel-next {
+    cursor: pointer;
+}
+
+.carousel-prev:disabled,
+.carousel-next:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
 }
