@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="./styles/mediaqueries.css">
     <link rel="stylesheet" href="./styles/utilityclasses.css">
     <link rel="stylesheet" href="./styles/servers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
@@ -91,7 +92,8 @@
                                 <h2>Survival Realm</h2>
                                 <p>Classic survival experience with challenging gameplay and community-driven economy.</p>
                                 <div class="server-details">
-                                    <span>IP: survival.mcpe.net</span>
+                                    <span>IP: survival.mcpe.net </span>
+                                        <span>Port:19132</span>
                                     <span>Players: 500/1000</span>
                                 </div>
                             </div>
@@ -103,6 +105,7 @@
                                 <p>Unlimited building space with advanced world edit tools and monthly building contests.</p>
                                 <div class="server-details">
                                     <span>IP: creative.mcpe.net</span>
+                                    <span>Port:19132</span>
                                     <span>Players: 250/500</span>
                                 </div>
                             </div>
@@ -114,6 +117,7 @@
                                 <p>Unique skyblock experience with custom plugins and weekly challenges.</p>
                                 <div class="server-details">
                                     <span>IP: skyblock.mcpe.net</span>
+                                    <span>Port:19132</span>
                                     <span>Players: 350/750</span>
                                 </div>
                             </div>
@@ -125,6 +129,7 @@
                                 <p>Intense PvP combat with multiple game modes and competitive ranking system.</p>
                                 <div class="server-details">
                                     <span>IP: pvp.mcpe.net</span>
+                                    <span>Port:19132</span>
                                     <span>Players: 400/800</span>
                                 </div>
                             </div>
@@ -136,6 +141,7 @@
                                 <p>Extensive mod pack with custom gameplay mechanics and unique world generation.</p>
                                 <div class="server-details">
                                     <span>IP: modded.mcpe.net</span>
+                                    <span>Port:19132</span>
                                     <span>Players: 200/400</span>
                                 </div>
                             </div>
@@ -194,40 +200,76 @@
                     </div>
                 </div>
             </section>
-            <div class="contact__container" id="contacts">
-                <div class="contact__cta margin-bottom-1">
-                    <span class="contact__cta__header">
-                        Let's <span class="name">collaborate!</span>
-                    </span>
-                    <span class="sec__desc">
-                        Ready to discover the creative and professional journey I've crafted? Take a moment to get to
-                        know me better, explore my work, and see how I can bring your ideas to life. Let’s connect and
-                        create something amazing together!
-                    </span>
+
+            <section id="developers">
+                <div class="developers-container">
+                    <div class="developer-card">
+                        <img src="/assets/img/pfp/ivan.jpeg" alt="Developer 1" class="developer-avatar">
+                        <h3>Ivan Reeve Lopez</h3>
+                        <h4>TerminalOx</h4>
+                        <p>Lead Developer & Minecraft Modding Specialist</p>
+                        <div class="developer-socials">
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+
+                    
+                    <div class="developer-card">
+                        <img src="/assets/img/pfp/kurt.jpg" alt="Developer 2" class="developer-avatar">
+                        <h3>Kurt Gliponeo</h3>
+                        <h4>Daimon38</h4>
+                        <p>Server Specialist & Texture Maker</p>
+                        <div class="developer-socials">
+                            <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
                 </div>
-                <div class="contact__form">
-                    <span class="contact__title">Fill out the form</span>
-                    <span class="sec__desc margin-bottom-1">Hi there! Ready to connect? Fill out the form below, and
-                        let's get started!</span>
-                    <form>
-                        <div>
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div>
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div>
-                            <label for="message">Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button class="submit-btn" type="submit">SEND MESSAGE</button>
-                    </form>
-                </div>
-            </div>
             </section>
-        </main>
+
+            <img src="/assets/img/gifs/zombie.gif" alt="Minecraft GIF" class="minecraft-gif">
+            <img src="/assets/img/gifs/creeper.gif" alt="Minecraft GIF" class="minecraft-gif">
+            <img src="/assets/img/gifs/enderman.gif" alt="Minecraft GIF" class="minecraft-gif">
+            <img src="/assets/img/gifs/golem.gif" alt="Minecraft GIF" class="minecraft-gif">
+        
+            <!-- Contacts Section -->
+            <section id="contacts">
+                <div class="contact__container">
+                    <div class="contact__cta margin-bottom-1">
+                        <span class="contact__cta__header">
+                            Let's <span class="name">collaborate!</span>
+                        </span>
+                        <span class="sec__desc">
+                            Ready to discover the creative and professional journey I've crafted? Take a moment to get to
+                            know me better, explore our work, and see how we can bring your ideas to life. Let's connect and
+                            create something amazing together!
+                        </span>
+                    </div>
+                    <div class="contact__form">
+                        <span class="contact__title">Fill out the form</span>
+                        <span class="sec__desc margin-bottom-1">Hi there! Ready to connect? Fill out the form below, and
+                            let's get started!</span>
+                        <form>
+                            <div>
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div>
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div>
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button class="submit-btn" type="submit">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
 
         <footer>
             <p>

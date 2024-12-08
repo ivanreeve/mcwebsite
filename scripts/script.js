@@ -91,6 +91,9 @@ document.addEventListener('DOMContentLoaded', () => {
         currentIndex: 0,
 
         init() {
+            // Ensure first slide is active on load
+            this.slides[0].classList.add('active');
+            
             this.prevButton.addEventListener('click', () => this.changeSlide(-1));
             this.nextButton.addEventListener('click', () => this.changeSlide(1));
         },

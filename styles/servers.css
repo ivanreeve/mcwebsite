@@ -1,17 +1,19 @@
 #servers {
     width: 100%;
     height: 100vh;
-    display: cover;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     overflow: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 .carousel-container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
-    height: 70vh;
+    height: 100vh;
     position: relative;
 }
 
@@ -25,8 +27,11 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
     display: flex;
     align-items: center;
     pointer-events: none;
@@ -46,8 +51,7 @@
     background-size: cover;
     background-position: center;
     filter: brightness(0.7);
-    opacity: 100;
-    z-index: -1;
+    background-repeat: no-repeat;
 }
 
 .server-content {
@@ -107,4 +111,84 @@
 .carousel-prev:hover, 
 .carousel-next:hover {
     background: rgba(255,255,255,0.4);
+}
+
+#developers {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #246c1a, #66b21f, #ec640a);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+.developers-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    z-index: 10;
+}
+
+.developer-card {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    border: 1px solid rgba(255,255,255,0.125);
+}
+
+.developer-card:hover {
+    transform: scale(1.05);
+}
+
+.developer-avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255,255,255,0.3);
+    margin-bottom: 1.5rem;
+}
+
+.developer-card h3 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.developer-card p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 1.5rem;
+}
+
+.developer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #fdbb2d;
 }
