@@ -1,30 +1,30 @@
 function toggleMenu() {
-    const darkbg = document.querySelector(".dark-bg");
-    const menu = document.querySelector(".nav-icon-menu");
-    const wrapper = document.querySelector(".wrapper");
-
-    menu.classList.toggle("active");
-    darkbg.classList.toggle("active");
-    wrapper.classList.toggle("menu-active");
-
-    // Handle body scrolling
-    document.body.style.overflow = darkbg.classList.contains("active") ? "hidden" : "auto";
-
-    darkbg.removeEventListener("click", removeMenu);
-    if (darkbg.classList.contains("active")) {
-        darkbg.addEventListener("click", removeMenu);
-    }
+  const darkbg = document.querySelector(".dark-bg");
+  const menu = document.querySelector(".nav-icon-menu");
+  const wrapper = document.querySelector(".wrapper");
+  
+  menu.classList.toggle("active");
+  darkbg.classList.toggle("active");
+  wrapper.classList.toggle("menu-active");
+  
+  // Handle body scrolling
+  document.body.style.overflow = darkbg.classList.contains("active") ? "hidden" : "auto";
+  
+  darkbg.removeEventListener("click", removeMenu);
+  if (darkbg.classList.contains("active")) {
+    darkbg.addEventListener("click", removeMenu);
+  }
 }
 
 function removeMenu() {
-    const darkbg = document.querySelector(".dark-bg");
-    const menu = document.querySelector(".nav-icon-menu");
-    const wrapper = document.querySelector(".wrapper");
-
-    menu.classList.remove("active");
-    darkbg.classList.remove("active");
-    wrapper.classList.remove("menu-active");
-    document.body.style.overflow = "auto"; // Restore scrolling
+  const darkbg = document.querySelector(".dark-bg");
+  const menu = document.querySelector(".nav-icon-menu");
+  const wrapper = document.querySelector(".wrapper");
+  
+  menu.classList.remove("active");
+  darkbg.classList.remove("active");
+  wrapper.classList.remove("menu-active");
+  document.body.style.overflow = "auto"; // Restore scrolling
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -84,26 +84,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const serverJoinButtons = document.querySelectorAll('.server-join');
+    const carousel = {
+        slides: document.querySelectorAll('.carousel-slide'),
+        prevButton: document.querySelector('.carousel-prev'),
+        nextButton: document.querySelector('.carousel-next'),
+        currentIndex: 0,
 
-    serverJoinButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const serverCard = button.closest('.server-card');
-            const serverIp = serverCard.querySelector('.server-details li:last-child').textContent.split(': ')[1];
+        init() {
+            this.prevButton.addEventListener('click', () => this.changeSlide(-1));
+            this.nextButton.addEventListener('click', () => this.changeSlide(1));
+        },
 
-            // Copy IP to clipboard
-            navigator.clipboard.writeText(serverIp).then(() => {
-                button.textContent = 'IP Copied!';
-                button.style.backgroundColor = '#4CAF50';
+        changeSlide(direction) {
+            // Remove active class from current slide
+            this.slides[this.currentIndex].classList.remove('active');
 
-                // Reset button after 2 seconds
-                setTimeout(() => {
-                    button.textContent = 'Join Server';
-                    button.style.backgroundColor = '';
-                }, 2000);
-            });
-        });
-    });
+            // Update index
+            this.currentIndex = (this.currentIndex + direction + this.slides.length) % this.slides.length;
+
+            // Add active class to new slide
+            this.slides[this.currentIndex].classList.add('active');
+        }
+    };
+
+    carousel.init();
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -176,50 +180,4 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-document.addEventListener('DOMContentLoaded', () => {
-    const carousel = document.querySelector('.carousel-container');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-    const serverCards = document.querySelectorAll('.server-card');
-
-    let currentIndex = 0;
-
-    function showCard(index) {
-        serverCards.forEach((card, i) => {
-            card.style.display = i === index ? 'flex' : 'none';
-        });
-    }
-
-    // Initial display
-    showCard(currentIndex);
-
-    // Next button
-    nextBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % serverCards.length;
-        showCard(currentIndex);
-    });
-
-    // Previous button
-    prevBtn.addEventListener('click', () => {
-        currentIndex = (currentIndex - 1 + serverCards.length) % serverCards.length;
-        showCard(currentIndex);
-    });
-
-    // Copy IP functionality
-    const copyIpButtons = document.querySelectorAll('.copy-ip');
-    copyIpButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const ipInput = button.previousElementSibling;
-            ipInput.select();
-            navigator.clipboard.writeText(ipInput.value).then(() => {
-                button.textContent = 'Copied!';
-                setTimeout(() => {
-                    button.textContent = 'Copy IP';
-                }, 2000);
-            });
-        });
-    });
-});
-
 

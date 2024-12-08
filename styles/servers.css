@@ -1,0 +1,110 @@
+#servers {
+    width: 100%;
+    height: 100vh;
+    display: cover;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 70vh;
+    position: relative;
+}
+
+.carousel-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.server-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.7);
+    opacity: 100;
+    z-index: -1;
+}
+
+.server-content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 2rem;
+    background: linear-gradient(135deg, rgba(0,0,0,0.6), rgba(50,50,50,0.3));
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.server-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.server-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.server-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-prev, 
+.carousel-next {
+    background: rgba(255,255,255,0.2);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: none;
+    backdrop-filter: blur(5px);
+    border-radius: 5px;
+}
+
+.carousel-prev:hover, 
+.carousel-next:hover {
+    background: rgba(255,255,255,0.4);
+}
