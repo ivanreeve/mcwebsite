@@ -6,14 +6,16 @@
 }
 
 :root {
-    --color-bg-main: #242323;
-    --color-bg-nav: #ffffff;
+    --color-bg-main: #1e1e2e;
+    --color-bg-nav: #242323;
+    --color-bg-nav1: #363434;
     --color-accent: #4CAF50;
     --color-accent-bd: #228B22;
     --color-red: #FE2C16;
 
     --color-blue: #2196F3;
     --color-brown: #8B4513;
+    --color-dbrown: #231709;
     --color-cream: #F5DEB3;
     --color-offwhite: #F2E3CA;
     --color-orange: #D2691E;
@@ -39,6 +41,7 @@ body {
 
 a {
     color: white;
+    text-decoration: none;
 }
 
 a:focus,
@@ -51,8 +54,8 @@ nav ul {
     flex-direction: row;
     justify-content: center;
     list-style: none;
-    background-color: var(--color-bg-main);
-    padding: 16px;
+    background-color: var(--color-bg-nav);
+    padding: 0.9rem 0 1rem 0;
     position: fixed;
     top: 0;
     width: 100vw;
@@ -60,7 +63,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 1rem;
 }
 
 nav ul li a {
@@ -74,6 +77,23 @@ nav ul li a.active {
     transform: scale(1.1);
 }
 
+nav ul button {
+    border: transparent;
+    background-color: transparent;
+    fill: var(--color-red);
+    cursor: pointer;
+}
+
+.nav-menu-link {
+    text-align: left;
+    width: 100vw;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: 0.8rem;
+    padding: 0.7rem 1rem;
+}
+
 .nav-link {
     font-weight: bold;
     font-size: 0.8rem;
@@ -81,6 +101,63 @@ nav ul li a.active {
 
 .nav-link:hover {
     color: var(--color-red);
+}
+
+.dark-bg {
+    visibility: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0;
+    z-index: 998;
+    transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.dark-bg.active {
+    visibility: visible;
+    opacity: 0.7;
+    transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-menu-link {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-links li {
+    cursor: pointer;
+}
+
+.nav-icon-menu {
+    padding-top: 2rem;
+    visibility: hidden;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 30%;
+    height: 100%;
+    background-color: var(--color-bg-nav1);
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.nav-icon-menu li {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.nav-icon-menu.active {
+    visibility: visible;
+    flex-direction: column;
+    bottom: 0;
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
 
 .homebg-slideshow-container {
@@ -148,9 +225,22 @@ nav ul li a.active {
 }
 
 .home-title button:hover {
-    background-color: var(--color-accent);
     color: black;
     box-shadow: 0 0 50px var(--color-accent);
+    background-color: var(--color-accent);
+}
+
+.about-container {
+    color: white;
+    height: 70vh;
+    gap: 1rem;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-dbrown);
+    padding: 3rem;
 }
 
 /* Servers Carousel Styles */
@@ -402,6 +492,6 @@ footer {
     color: white;
     font-size: 0.8rem;
     gap: 1rem;
-    padding: 2rem 0 3rem 0;
-    background-color: var(--color-bg-main);
+    padding: 1rem 0 3rem 0;
+    background-color: var(--color-bg-nav);
 }

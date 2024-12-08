@@ -13,6 +13,8 @@
 
 <body>
     <div class="wrapper">
+        <div class="dark-bg">
+        </div>
         <header>
             <nav>
                 <ul>
@@ -21,8 +23,31 @@
                     <li><a href="#servers" class="nav-link">Servers</a></li>
                     <li><a href="#mods" class="nav-link">Mods</a></li>
                     <li><a href="#contacts" class="nav-link">Contacts</a></li>
+                    <button onclick="toggleMenu()">
+                        <svg width="20x" height="20px" viewBox="0 0 12 12" enable-background="new 0 0 12 12" id="Слой_1"
+                            version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <rect height="1" width="11" x="0.5" y="5.5" />
+                                <rect height="1" width="11" x="0.5" y="2.5" />
+                                <rect height="1" width="11" x="0.5" y="8.5" />
+                            </g>
+                        </svg>
+                    </button>
                 </ul>
             </nav>
+            <div class="nav-icon-menu">
+                <div class="menu-slider">
+                    <span></span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#servers" class="nav-link">Servers</a></li>
+                    <li><a href="#mods" class="nav-link">Mods</a></li>
+                    <li><a href="#contacts" class="nav-link">Contacts</a></li>
+                </ul>
+            </div>
         </header>
 
         <main>
@@ -49,9 +74,11 @@
                 <button onclick="location.href='#servers'">GET STARTED</button>
             </section>
 
-            <section id="about" class="section">
+            <section id="about" class="about-container">
                 <h2>About Our Community</h2>
-                <p>We are passionate Minecraft players creating amazing worlds and experiences.</p>
+                <p>We are passionate and dedicated Minecraft players who thrive on creativity, working together to
+                    design and build amazing worlds, immersive landscapes, and unforgettable experiences that captivate
+                    and inspire others, all while pushing the limits of imagination and game mechanics.</p>
             </section>
 
             <section id="servers"></section>
