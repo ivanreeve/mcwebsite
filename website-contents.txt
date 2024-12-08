@@ -24,9 +24,9 @@ TASK DISTRIBUTION
 IVAN
 -- Navigation bar [done]
 -- Home [done]
--- About 
--- Footer
--- Mods
+-- About []
+-- Footer [done]
+-- Mods []
 
 KURT
 -- Servers

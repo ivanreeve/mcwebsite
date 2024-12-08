@@ -12,6 +12,28 @@
     /**urdl**/
     padding: 1rem 1rem 0.7rem 0;
   }
+
+  .contact__form {
+    width: 100%;
+  }
+
+  .sec__content {
+    flex-direction: column;
+    padding: 2rem 0.5rem;
+  }
+
+  .sec__card {
+    width: 95%;
+    align-self: center;
+  }
+
+  .contact__container {
+    flex-direction: column;
+  }
+
+  .contact__cta {
+    max-width: 90%;
+  }
 }
 
 @media(width > 700px) {
@@ -21,5 +43,23 @@
 
   .nav-icon-menu {
     display: none;
+  }
+
+  .contact__form {
+    width: 50%;
+  }
+
+  .sec__content {
+    flex-direction: row;
+    padding: 1rem 0;
+  }
+
+  .contact__container {
+    flex-direction: row;
+  }
+
+  .contact__cta {
+    padding: 1rem;
+    max-width: 50%;
   }
 }
