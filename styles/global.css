@@ -19,6 +19,15 @@
     --color-cream: #F5DEB3;
     --color-offwhite: #F2E3CA;
     --color-orange: #D2691E;
+
+    --mc-grass-green: #4E9F3D;
+    --mc-wood-brown: #8B4513;
+    --mc-stone-gray: #696969;
+    --mc-sky-blue: #87CEEB;
+    --mc-background-light: #F0F4F8;
+    --mc-text-primary: #2C3E50;
+    --mc-accent-green: #2ECC71;
+    --mc-border-radius: 12px;
 }
 
 *,
@@ -28,6 +37,11 @@
     padding: 0;
     box-sizing: border-box;
     /* outline: 1px solid red; */
+}
+
+* {
+    box-sizing: border-box;
+    transition: all 0.3s ease;
 }
 
 body {
@@ -255,96 +269,192 @@ nav ul button {
     padding: 1rem;
 }
 
-/* Servers Carousel Styles */
 .servers-carousel {
     position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .carousel-container {
     position: relative;
-    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 20px;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: thin;
+    scrollbar-color: var(--mc-stone-gray) transparent;
+    padding: 0 60px; /* Space for external arrows */
 }
 
 .server-card {
+    flex: 0 0 calc(20% - 20px);
     display: flex;
-    width: 100%;
     background-color: white;
     border: 4px solid var(--minecraft-brown);
+    border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin: 0 3rem;
 }
 
 .server-card-image {
-    flex: 1;
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+}
+
+.server-card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    z-index: 1;
 }
 
 .server-card-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: brightness(0.9);
 }
 
 .server-card-content {
-    flex: 2;
-    padding: 20px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: #FAFAFA;
 }
 
 .server-card-content h3 {
-    color: var(--minecraft-green);
+    color: var(--mc-grass-green);
     margin-bottom: 10px;
+    font-size: 1.4em;
+    border-bottom: 2px solid var(--mc-accent-green);
+    padding-bottom: 5px;
+}
+
+.server-card-content p {
+    color: var(--mc-text-primary);
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    opacity: 0.8;
 }
 
 .server-details {
-    margin-top: 15px;
+    margin-top: auto;
 }
 
 .server-detail-item {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    color: var(--mc-text-primary);
 }
 
 .server-detail-item span {
     margin-right: 10px;
-    font-size: 1.2em;
+    font-size: 1.3em;
+    width: 30px;
+    text-align: center;
+    opacity: 0.7;
 }
 
 .server-ip {
     display: flex;
     margin-top: 15px;
+    border-top: 1px solid #E0E0E0;
+    padding-top: 10px;
 }
 
 .server-ip input {
     flex-grow: 1;
     padding: 8px;
-    border: 2px solid var(--color-brown);
+    border: 2px solid var(--mc-wood-brown);
     background-color: #F5DEB3;
+    border-radius: 5px 0 0 5px;
+    font-family: monospace;
+    color: var(--mc-text-primary);
 }
 
 .server-ip .copy-ip {
     padding: 8px 15px;
-    background-color: var(--color-accent);
+    background-color: var(--mc-grass-green);
     color: white;
     border: none;
     cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    transition: background-color 0.3s ease;
+}
+
+.server-ip .copy-ip:hover {
+    background-color: var(--mc-accent-green);
 }
 
 .carousel-controls {
-    display: flex;
-    justify-content: space-between;
     position: absolute;
     top: 50%;
-    width: 100%;
+    left: 0;
+    right: 0;
     transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none; /* Prevent blocking hover on cards */
+    z-index: 10;
 }
 
 .carousel-controls button {
-    background-color: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    background-color: rgba(78, 159, 61, 0.8); /* Minecraft grass green with opacity */
     color: white;
-    border: none;
-    padding: 10px;
+    border: 3px solid var(--mc-wood-brown);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
     cursor: pointer;
+    pointer-events: auto; /* Make buttons clickable */
+    transition: all 0.3s ease;
+    transform: scale(0.9);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+}
+
+.carousel-controls button:hover {
+    background-color: var(--mc-accent-green);
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+}
+
+.carousel-controls .prev-btn {
+    animation: float-left 2s ease-in-out infinite alternate;
+}
+
+.carousel-controls .next-btn {
+    animation: float-right 2s ease-in-out infinite alternate;
+}
+
+@keyframes float-left {
+    0% {
+        transform: translateX(-10px) scale(0.9);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes float-right {
+    0% {
+        transform: translateX(10px) scale(0.9);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
 }
 
 /* Contacts Page Styles */
