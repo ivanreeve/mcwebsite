@@ -125,7 +125,7 @@ nav ul button {
     height: 100%;
     background-color: black;
     opacity: 0;
-    z-index: 998;
+    z-index: 9999;
     transition: opacity 0.1s ease-in-out, visibility 0.1s ease-in-out;
 }
 
@@ -157,7 +157,7 @@ nav ul button {
     width: 200px;
     height: 100%;
     background-color: var(--color-bg-nav1);
-    z-index: 999;
+    z-index: 999999;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out;
 }
@@ -270,6 +270,7 @@ nav ul button {
 }
 
 .servers-carousel {
+    color: black;
     position: relative;
     width: 100%;
     max-width: 800px;
@@ -603,10 +604,13 @@ nav ul button {
 
 .mods-card-container {
     position: relative;
-    width: 340px;
     height: 260px;
-    border: 1px solid black;
+    border: 2px solid black;
     cursor: pointer;
+}
+
+.mods-card-container:hover {
+    border: 2px solid var(--color-red);
 }
 
 .mods-card-container>img {
@@ -621,7 +625,6 @@ nav ul button {
 
 .mods-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: 0;
@@ -629,6 +632,7 @@ nav ul button {
     padding: 1rem;
     gap: 1rem;
     border: 1px solid black;
+    height: auto;
 }
 
 .mods-main-title {
@@ -682,7 +686,6 @@ nav ul button {
     margin: 1rem;
     padding: 2rem;
     background-color: var(--color-bg-nav);
-    border-radius: 8px;
     max-width: 90vw;
     align-self: center;
 }
@@ -699,9 +702,8 @@ nav ul button {
 }
 
 .contact__form input {
-    border-radius: 2px;
     height: 30px;
-    background-color: var(--color-gray1);
+    background-color: var(--color-bg-nav1);
     border: transparent;
     padding-left: 0.5rem;
     color: var(--color-white);
@@ -709,13 +711,12 @@ nav ul button {
 }
 
 .contact__form input:focus {
-    outline: 1px solid var(--color-blue);
+    outline: 2px solid var(--color-accent);
 }
 
 .contact__form textarea {
-    border-radius: 2px;
     height: 100px;
-    background-color: var(--color-gray1);
+    background-color: var(--color-bg-nav1);
     border: transparent;
     padding: 0.5rem;
     color: var(--color-white);
@@ -725,7 +726,7 @@ nav ul button {
 }
 
 .contact__form textarea:focus {
-    outline: 1px solid var(--color-blue);
+    outline: 2px solid var(--color-accent);
 }
 
 .contact__form form div {
@@ -734,13 +735,14 @@ nav ul button {
 }
 
 .submit-btn {
-    background-color: var(--color-blue);
-    color: white;
-    border: none;
+    font-family: 'Nunito';
+    font-weight: bold;
+    background-color: var(--color-accent);
+    color: var(--color-bg-nav);
+    border: 2px solid var(--color-accent-bd);
     padding: 10px 20px;
-    border-radius: 4px;
     cursor: pointer;
-    max-width: 200px;
+    width: 160px;
     align-self: center;
 }
 
