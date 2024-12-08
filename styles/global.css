@@ -46,7 +46,7 @@
 
 body {
     font-family: 'Inter';
-    min-width: 700px;
+    width: 100vw;
     color: white;
 }
 
@@ -286,7 +286,8 @@ nav ul button {
     scroll-snap-type: x mandatory;
     scrollbar-width: thin;
     scrollbar-color: var(--mc-stone-gray) transparent;
-    padding: 0 60px; /* Space for external arrows */
+    padding: 0 60px;
+    /* Space for external arrows */
 }
 
 .server-card {
@@ -312,7 +313,7 @@ nav ul button {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.3));
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
     z-index: 1;
 }
 
@@ -404,14 +405,16 @@ nav ul button {
     transform: translateY(-50%);
     display: flex;
     justify-content: space-between;
-    pointer-events: none; /* Prevent blocking hover on cards */
+    pointer-events: none;
+    /* Prevent blocking hover on cards */
     z-index: 10;
 }
 
 .carousel-controls button {
     width: 50px;
     height: 50px;
-    background-color: rgba(78, 159, 61, 0.8); /* Minecraft grass green with opacity */
+    background-color: rgba(78, 159, 61, 0.8);
+    /* Minecraft grass green with opacity */
     color: white;
     border: 3px solid var(--mc-wood-brown);
     border-radius: 50%;
@@ -420,16 +423,17 @@ nav ul button {
     justify-content: center;
     font-size: 1.5em;
     cursor: pointer;
-    pointer-events: auto; /* Make buttons clickable */
+    pointer-events: auto;
+    /* Make buttons clickable */
     transition: all 0.3s ease;
     transform: scale(0.9);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .carousel-controls button:hover {
     background-color: var(--mc-accent-green);
     transform: scale(1.1) rotate(5deg);
-    box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
 
 .carousel-controls .prev-btn {
@@ -444,6 +448,7 @@ nav ul button {
     0% {
         transform: translateX(-10px) scale(0.9);
     }
+
     100% {
         transform: translateX(0) scale(1);
     }
@@ -453,6 +458,7 @@ nav ul button {
     0% {
         transform: translateX(10px) scale(0.9);
     }
+
     100% {
         transform: translateX(0) scale(1);
     }
@@ -677,6 +683,7 @@ nav ul button {
 .contact__title {
     font-size: 1.5rem;
     font-weight: bold;
+    margin-bottom: 1rem;
 }
 
 .contact__form {
@@ -745,7 +752,6 @@ nav ul button {
     width: 160px;
     align-self: center;
 }
-
 
 footer {
     display: flex;
