@@ -39,6 +39,11 @@
     /* outline: 1px solid red; */
 }
 
+a:active,
+button:active {
+    -webkit-tap-highlight-color: transparent;
+}
+
 * {
     box-sizing: border-box;
     transition: all 0.3s ease;
