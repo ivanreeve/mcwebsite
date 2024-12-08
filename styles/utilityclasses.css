@@ -1,0 +1,7 @@
+.color-red {
+  color: var(--color-red);
+}
+
+.mojang-font {
+  font-family: 'MojangFont';
+}

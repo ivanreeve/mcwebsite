@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const targetId = link.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);
-            
+
             window.scrollTo({
                 top: targetSection.offsetTop - 100,
                 behavior: 'smooth'
@@ -61,12 +61,12 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const serverCard = button.closest('.server-card');
             const serverIp = serverCard.querySelector('.server-details li:last-child').textContent.split(': ')[1];
-            
+
             // Copy IP to clipboard
             navigator.clipboard.writeText(serverIp).then(() => {
                 button.textContent = 'IP Copied!';
                 button.style.backgroundColor = '#4CAF50';
-                
+
                 // Reset button after 2 seconds
                 setTimeout(() => {
                     button.textContent = 'Join Server';
@@ -75,6 +75,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     });
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slides');
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    console.log(slides)
+
+    // Function to show the next slide
+    function showSlide() {
+        // Remove 'active' class from all slides
+        slides.forEach(slide => {
+            slide.classList.remove('active');
+        });
+
+        // Show the current slide
+        slides[currentIndex].classList.add('active');
+
+        // Update the index for the next slide
+        currentIndex = (currentIndex + 1) % totalSlides;
+    }
+
+    // Start the slideshow
+    showSlide();
+    setInterval(showSlide, 5000); // Change slide every 3 seconds
 });
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -107,7 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
     messageForm.addEventListener('submit', (e) => {
         e.preventDefault();
         const formData = new FormData(messageForm);
-        
+
         // Basic validation (you'd typically use more robust validation)
         const name = formData.get('name');
         const email = formData.get('email');
@@ -128,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
     const serverCards = document.querySelectorAll('.server-card');
-    
+
     let currentIndex = 0;
 
     function showCard(index) {
